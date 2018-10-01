@@ -1,0 +1,118 @@
+html {
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to top right, #d9abab, #cde9f6);
+}
+
+body * {
+  font-family: PT Mono;
+}
+
+#container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+#container h1 {
+  margin-left: 16px;
+  color: rgba(0, 0, 0, 0.4);
+  font-weight: 200;
+}
+
+#container button {
+  position: absolute;
+  left: calc(50% + 176px + 32px);
+  top: calc(50% + 256px - 28px);
+  padding: 8px 12px;
+  box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.1), 3px 3px 3px 3px rgba(0, 0, 0, 0.1), 2px 2px 2px 2px rgba(0, 0, 0, 0.1);
+  background: #f8f8f8;
+  color: rgba(0, 0, 0, 0.6);
+  border: none;
+  border-radius: 4px;
+  transition: background cubic-bezier(0.165, 0.84, 0.44, 1) 0.3s;
+  overflow: hidden;
+}
+
+#container button:hover {
+  background: #f0f0f0af;
+}
+
+#container button:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, .5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
+}
+
+#container button:focus:not(:active)::after {
+  animation: ripple 1.25s ease-out;
+}
+
+#letters {
+  margin: auto;
+  font-size: 512px;
+  width: 352px;
+  height: 512px;
+  padding: 4px;
+  box-sizing: content-box;
+  overflow: hidden;
+  border-radius: 3px;
+  box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.1), 3px 3px 3px 3px rgba(0, 0, 0, 0.1), 2px 2px 2px 2px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(white, #f8f8f8);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+#letters svg {
+  text-align: center;
+  overflow: hidden;
+}
+
+#letters textarea {
+  position: absolute;
+  border: none;
+  width: 352px;
+  height: 512px;
+  padding: 0;
+  resize: none;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 1;
+  }
+  20% {
+    transform: scale(25, 25);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(40, 40);
+  }
+}
